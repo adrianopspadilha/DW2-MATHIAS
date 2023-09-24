@@ -1,5 +1,7 @@
 
-function consumoAlcool (anoNascimento, paisReferencia, anoReferencia = new Date().getFullYear()){
+const anoReferencia = new Date().getFullYear()
+
+function consumoAlcool (anoNascimento, paisReferencia, anoReferencia){
      let idadeMinima;
 
      switch (paisReferencia){
@@ -15,7 +17,7 @@ function consumoAlcool (anoNascimento, paisReferencia, anoReferencia = new Date(
         default:
             return false
      }
-
+     
      const idadePessoa = anoReferencia - anoNascimento
 
      return idadePessoa >= idadeMinima
