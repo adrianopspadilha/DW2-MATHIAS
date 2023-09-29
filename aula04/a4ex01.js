@@ -1,6 +1,6 @@
 const filmes = [
     {
-        nome: 'senhor dos aneis',
+        nome: 'o senhor dos aneis: a sociedade do anel',
         genero: 'ficção',
         diretor: 'peter jackson',
         lancamento: 2001,
@@ -23,7 +23,7 @@ const filmes = [
         nome: 'laranja mecanica',
         genero: 'ficção',
         diretor: 'stanley kubrick',
-        lancamento: 1969,
+        lancamento: 1972,
         atores: [
             {
                 nome: 'malcolm mcdowell',
@@ -40,7 +40,7 @@ const filmes = [
         nome: 'scarface',
         genero: 'ficção',
         diretor: 'brian depalma',
-        lancamento: 1984,
+        lancamento: 1983,
         atores: [
             {
                 nome: 'al pacino',
@@ -60,15 +60,15 @@ const htmlList = document.querySelector('#filmes');
 
 const anoReferencia = new Date().getFullYear();
 
-const idadeFilme = anoReferencia - filmes.lancamento;
+for (let filme of filmes){
 
-for (let filme of filmes){
-    const p = document.createElement('p');
-    p.textContent = filme.nome;
-    htmlList.appendChild(p);
-}
-for (let filme of filmes){
-    const p = document.createElement('p');
-    p.textContent = filme.idadeFilme;
-    htmlList.appendChild(p);
+    const idadeFilme = anoReferencia - filme.lancamento;
+
+    const pNome = document.createElement('p');
+    pNome.textContent = `Nome do filme: ${filme.nome}`;
+    htmlList.appendChild(pNome);
+
+    const pIdade = document.createElement('p');
+    pIdade.textContent = `${filme.nome} tem ${idadeFilme} anos`;
+    htmlList.appendChild(pIdade);
 }
